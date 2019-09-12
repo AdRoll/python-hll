@@ -6,15 +6,15 @@ python-hll
 .. image:: https://img.shields.io/pypi/v/python_hll.svg
         :target: https://pypi.python.org/pypi/python_hll
 
-.. image:: https://img.shields.io/travis/JonathanAquino/python_hll.svg
-        :target: https://travis-ci.org/JonathanAquino/python_hll
+.. image:: https://img.shields.io/travis/AdRoll/python-hll.svg
+        :target: https://travis-ci.org/AdRoll/python-hll
 
 .. image:: https://readthedocs.org/projects/python-hll/badge/?version=latest
         :target: https://python-hll.readthedocs.io/en/latest/?badge=latest
         :alt: Documentation Status
 
-.. image:: https://pyup.io/repos/github/JonathanAquino/python_hll/shield.svg
-     :target: https://pyup.io/repos/github/JonathanAquino/python_hll/
+.. image:: https://pyup.io/repos/github/AdRoll/python-hll/shield.svg
+     :target: https://pyup.io/repos/github/AdRoll/python-hll/
      :alt: Updates
 
 A Python implementation of `HyperLogLog <http://algo.inria.fr/flajolet/Publications/FlFuGaMe07.pdf>`_
