@@ -32,13 +32,13 @@ You can either clone the public repository:
 
 .. code-block:: console
 
-    $ git clone git://github.com/SemanticSugar/python_hll
+    $ git clone git://github.com/AdRoll/python-hll
 
 Or download the `tarball`_:
 
 .. code-block:: console
 
-    $ curl  -OL https://github.com/SemanticSugar/python_hll/tarball/master
+    $ curl  -OL https://github.com/AdRoll/python-hll/tarball/master
 
 Once you have a copy of the source, you can install it with:
 
@@ -47,5 +47,5 @@ Once you have a copy of the source, you can install it with:
     $ python setup.py install
 
 
-.. _Github repo: https://github.com/SemanticSugar/python_hll
-.. _tarball: https://github.com/SemanticSugar/python_hll/tarball/master
+.. _Github repo: https://github.com/AdRoll/python-hll
+.. _tarball: https://github.com/AdRoll/python-hll/tarball/master
