@@ -8,3 +8,5 @@ __pycache__
 _build
 docs/modules.rst
 docs/python_hll.rst
+/dist
+/build
