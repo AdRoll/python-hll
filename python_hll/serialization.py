@@ -265,7 +265,7 @@ class BigEndianAscendingWordSerializer:
 
     def get_bytes(self):
         """
-        Returns the backing array of ``byte``s that contain the serialized words.
+        Returns the backing array of ``byte``'s that contain the serialized words.
 
         :returns: the serialized words as a list of bytes.
         :rtype: list
@@ -467,7 +467,8 @@ class SchemaVersionOne:
         :param int word_length: the length of the 'words' that comprise the data of the
                HLL. Words must be at least 5 bits and at most 64 bits long.
         :param int word_count: the number of 'words' in the HLL's data.
-        :returns a byte array serializer used to serialize a HLL according
+
+        :returns: a byte array serializer used to serialize a HLL according
                  to this schema version's specification.
         :rtype: BigEndianAscendingWordSerializer
         """
@@ -581,6 +582,7 @@ class SerializationUtil:
         """
         :param int schema_version_number: the version number of the ``SchemaVersion``
                desired. This must be a registered schema version number.
+
         :returns: The ``SchemaVersion`` for the given number. This will never be ``None``.
         :rtype: SchemaVersion
         """
@@ -599,6 +601,7 @@ class SerializationUtil:
         serialized HLL.
 
         :param list bytes: the serialized HLL whose schema version is desired.
+
         :returns the schema version for the specified HLL. This will never be ``None``.
         :rtype: SchemaVersion
         """

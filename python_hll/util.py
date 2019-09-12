@@ -216,7 +216,7 @@ class LongIterator:
 class BitVector:
     """
     A vector (array) of bits that is accessed in units ("registers") of ``width``
-    bits which are stored as 64bit "words" (``long``s).  In this context
+    bits which are stored as 64bit "words" (``long``'s).  In this context
     a register is at most 64bits.
     """
 
@@ -295,7 +295,7 @@ class BitVector:
     def register_iterator(self):
         """
         :returns: a ``LongIterator`` for iterating starting at the register
-     *            with index zero. This will never be ``None``.
+                  with index zero. This will never be ``None``.
         :rtype: LongIterator
         """
         return LongIterator(self._register_width, self._words, self._register_mask, self._count)
@@ -399,10 +399,10 @@ class NumberUtil:
     @classmethod
     def to_hex(cls, bytes, offset, count):
         """
-        Converts the specified array of ``byte``s into a string of
+        Converts the specified array of ``byte``'s into a string of
         hex characters (low ``byte`` first).
 
-        :param list bytes: the array of ``byte``s that are to be converted.
+        :param list bytes: the array of ``byte``'s that are to be converted.
                This cannot be ``None`` though it may be empty.
         :param int offset: the offset in ``bytes`` at which the bytes will
                be taken.  This cannot be negative and must be less than
@@ -436,17 +436,17 @@ class NumberUtil:
     @classmethod
     def from_hex(cls, string, offset, count):
         """
-        Converts the specified array of hex characters into an array of ``byte``s
+        Converts the specified array of hex characters into an array of ``byte``'s
         (low ``byte`` first).
 
-        :param string string: the string of hex characters to be converted into ``byte``s.
+        :param string string: the string of hex characters to be converted into ``byte``'s.
                This cannot be ``None`` though it may be blank.
         :param int offset: the offset in the string at which the characters will be
                taken.  This cannot be negative and must be less than ``string.length() - 1``.
         :param int count: the number of characters to be retrieved from the specified
                string.  This cannot be negative and must be divisible by two
                (since there are two characters per ``byte``).
-        :returns: the array of ``byte``s that were converted from the
+        :returns: the array of ``byte``'s that were converted from the
                   specified string (in the specified range).  This will never be
                   ``None`` though it may be empty if ``string``
                   is empty or ``count`` is zero.

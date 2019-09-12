@@ -125,7 +125,7 @@ class HLLUtil:
         The cutoff for using the "large range correction" formula, from the
         HyperLogLog algorithm, adapted for 64 bit hashes.
 
-        See `Blog post with section on 64 bit hashes and "large range correction" cutoff<http://research.neustar.biz/2013/01/24/hyperloglog-googles-take-on-engineering-hll/>`_.
+        See `Blog post with section on 64 bit hashes and "large range correction" cutoff <http://research.neustar.biz/2013/01/24/hyperloglog-googles-take-on-engineering-hll/>`_.
 
         :param int log2m: log-base-2 of the number of registers in the HLL. <em>b<em> in the paper.
         :param int register_size_in_bits: the size of the HLL registers, in bits.
@@ -143,7 +143,7 @@ class HLLUtil:
         for 64 bit hashes. Only appropriate for estimators whose value exceeds
         the return of ``largeEstimatorCutoff()``.
 
-        See `Blog post with section on 64 bit hashes and "large range correction" cutoff<http://research.neustar.biz/2013/01/24/hyperloglog-googles-take-on-engineering-hll/>`_.
+        See `Blog post with section on 64 bit hashes and "large range correction" cutoff <http://research.neustar.biz/2013/01/24/hyperloglog-googles-take-on-engineering-hll/>`_.
 
         :param int log2m: log-base-2 of the number of registers in the HLL. <em>b<em> in the paper.
         :param int register_size_in_bits: the size of the HLL registers, in bits.

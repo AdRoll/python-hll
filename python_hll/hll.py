@@ -471,7 +471,7 @@ class HLL:
         elements have been added.
 
         NOTE: Unlike ``addRaw(long)``, ``clear`` does NOT handle
-        transitions between ``HLLType``s - a probabilistic type will remain
+        transitions between ``HLLType``'s - a probabilistic type will remain
         probabilistic after being cleared.
 
         :rtype: void
