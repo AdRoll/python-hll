@@ -6,3 +6,5 @@ python_hll.egg-info
 __pycache__
 *.pyc
 _build
+docs/modules.rst
+docs/python_hll.rst
