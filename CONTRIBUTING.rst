@@ -66,9 +66,10 @@ Ready to contribute? Here's how to set up `python_hll` for local development.
 
 3. Install your local copy into a virtualenv. Assuming you have virtualenvwrapper installed, this is how you set up your fork for local development::
 
-    $ mkvirtualenv python_hll
     $ cd python_hll/
+    $ mkvirtualenv python_hll
     $ python setup.py develop
+    $ pip install -r requirements_dev.txt
 
 4. Create a branch for local development::
 
@@ -79,9 +80,8 @@ Ready to contribute? Here's how to set up `python_hll` for local development.
 5. When you're done making changes, check that your changes pass flake8 and the
    tests, including testing other Python versions with tox::
 
-    $ flake8 python_hll tests
-    $ python setup.py test or py.test
-    $ tox
+    $ make lint
+    $ make test-fast
 
    To get flake8 and tox, just pip install them into your virtualenv.
 
