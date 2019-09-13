@@ -171,7 +171,7 @@ if on_rtd:
         output_path = os.path.join(cur_dir, 'docs')
         modules = os.path.join(cur_dir, os.path.normpath(r"../python_hll"))
         exclusions = []
-        apidoc_main([None, '-f', '-o', output_path, modules] + exclusions)
+        apidoc_main([None, '-e', '-f', '-o', output_path, modules] + exclusions)
 
     def setup(app):
         app.connect('builder-inited', run_apidoc)
