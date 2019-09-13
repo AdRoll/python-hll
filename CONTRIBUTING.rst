@@ -120,8 +120,7 @@ A reminder for the maintainers on how to deploy.
 Make sure all your changes are committed (including an entry in HISTORY.rst).
 Then run::
 
-$ bumpversion patch  # or bumpversion minor, or bumpversion major. This will tag the code and
-                       increment/commit new version numbers.
+$ bumpversion patch  # or bumpversion minor, or bumpversion major. This will tag the code and increment/commit new version numbers.
 $ git push
 $ git push --tags
 $ make release  # use your pypi credentials
