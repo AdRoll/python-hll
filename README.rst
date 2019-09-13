@@ -79,4 +79,4 @@ Also see the `API documentation <https://python-hll.readthedocs.io/en/latest/py-
 
 Development
 ---------------
-See the `Contributing` document for how to get started building, testing, and deploying the code.
+See `Contributing <https://python-hll.readthedocs.io/en/latest/contributing.html>`_ for how to get started building, testing, and deploying the code.
