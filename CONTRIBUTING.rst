@@ -83,7 +83,14 @@ Ready to contribute? Here's how to set up `python_hll` for local development.
     $ make lint
     $ make test-fast
 
-   To get flake8 and tox, just pip install them into your virtualenv.
+   To run one test file or one test::
+
+    $ py.test --capture=no tests/test_sparse_hll.py
+    $ py.test --capture=no tests/test_sparse_hll.py::test_add
+
+   To run slow tests::
+
+    $ make test
 
 6. Commit your changes and push your branch to GitHub::
 
@@ -120,7 +127,9 @@ A reminder for the maintainers on how to deploy.
 Make sure all your changes are committed (including an entry in HISTORY.rst).
 Then run::
 
-$ bumpversion patch  # or bumpversion minor, or bumpversion major. This will tag the code and increment/commit new version numbers.
+$ # Run bumpversion patch, or bumpversion minor, or bumpversion major.
+$ # This will tag the code and increment/commit new version numbers.
+$ bumpversion patch
 $ git push
 $ git push --tags
 $ make release  # use your pypi credentials

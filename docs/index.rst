@@ -7,7 +7,6 @@ Welcome to python-hll's documentation!
 
    readme
    installation
-   usage
    modules
    contributing
    authors

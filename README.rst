@@ -10,6 +10,9 @@ python-hll
         :target: https://python-hll.readthedocs.io/en/latest/?badge=latest
         :alt: Documentation Status
 
+.. image:: https://img.shields.io/badge/github-python--hll-yellow
+        :target: https://github.com/AdRoll/python-hll
+
 A Python implementation of `HyperLogLog <http://algo.inria.fr/flajolet/Publications/FlFuGaMe07.pdf>`_
 whose goal is to be `storage compatible <https://github.com/aggregateknowledge/hll-storage-spec>`_
 with `java-hll <https://github.com/aggregateknowledge/java-hll>`_, `js-hll <https://github.com/aggregateknowledge/js-hll>`_
@@ -24,25 +27,53 @@ while in Python ``test_hll_serialization`` takes 1.5 hours to run (about 400x sl
 * Free software: MIT license
 * Documentation: https://python-hll.readthedocs.io.
 
-
-Getting started
+Overview
 ---------------
-::
+See `java-hll <https://github.com/aggregateknowledge/java-hll>`_ for an overview of what HLLs are and how they work.
 
-    $ mkvirtualenv python_hll
-    $ python setup.py develop
-    $ pip install -r requirements_dev.txt
+Usage
+---------------
 
-Run tests::
+Hashing and adding a value to a new HLL::
 
-    $ make lint
-    $ make test-fast
+    from python_hll.hll import HLL
+    import mmh3
+    value_to_hash = 'foo'
+    hashed_value = mmh3.hash(value_to_hash)
 
-To run one test file or one test::
+    hll = HLL(13, 5) # log2m=13, regwidth=5
+    hll.add_raw(hashed_value)
 
-    $ py.test --capture=no tests/test_sparse_hll.py
-    $ py.test --capture=no tests/test_sparse_hll.py::test_add
+Retrieving the cardinality of an HLL::
 
-To run slow tests::
+    cardinality = hll.cardinality()
 
-    $ make test
+Unioning two HLLs together (and retrieving the resulting cardinality)::
+
+    hll1 = HLL(13, 5) # log2m=13, regwidth=5
+    hll2 = HLL(13, 5) # log2m=13, regwidth=5
+
+    # ... (add values to both sets) ...
+
+    hll1.union(hll2) # modifies hll1 to contain the union
+    cardinalityUnion = hll1.cardinality()
+
+Reading an HLL from a hex representation of
+`storage specification, v1.0.0 <https://github.com/aggregateknowledge/hll-storage-spec/blob/v1.0.0/STORAGE.md>`_
+(for example, retrieved from a `PostgreSQL database <https://github.com/aggregateknowledge/postgresql-hll>`_)::
+
+    from python_hll.util import NumberUtil
+    input = '\\x128D7FFFFFFFFFF6A5C420'
+    hex_string = input[2:]
+    hll = HLL.from_bytes(NumberUtil.from_hex(hex_string, 0, len(hex_string)))
+
+Writing an HLL to its hex representation of
+`storage specification, v1.0.0 <https://github.com/aggregateknowledge/hll-storage-spec/blob/v1.0.0/STORAGE.md>`_
+(for example, to be inserted into a `PostgreSQL database <https://github.com/aggregateknowledge/postgresql-hll>`_)::
+
+    bytes = hll.to_bytes()
+    output = "\\x" + NumberUtil.to_hex(bytes, 0, len(bytes))
+
+Development
+---------------
+See the `Contributing` document for how to get started building and testing the code.
