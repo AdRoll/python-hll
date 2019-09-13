@@ -159,5 +159,19 @@ texinfo_documents = [
      'Miscellaneous'),
 ]
 
+# -- Make ReadTheDocs generate API doc ----------------------------------------
 
+# See https://github.com/isogeo/isogeo-api-py-minsdk/commit/df45262dae266035946839009e02e6c5e068a05f
+on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
+if on_rtd:
+    def run_apidoc(_):
+        from sphinx.apidoc import main as apidoc_main
 
+        cur_dir = os.path.abspath(os.path.dirname(__file__))
+        output_path = os.path.join(cur_dir, 'docs')
+        modules = os.path.join(cur_dir, os.path.normpath(r"../python_hll"))
+        exclusions = []
+        apidoc_main([None, '-f', '-o', output_path, modules] + exclusions)
+
+    def setup(app):
+        app.connect('builder-inited', run_apidoc)

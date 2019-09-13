@@ -124,3 +124,4 @@ $ bumpversion patch  # or bumpversion minor, or bumpversion major. This will tag
 $ git push
 $ git push --tags
 $ make release  # use your pypi credentials
+$ # Log in to https://python-hll.readthedocs.io/ and publish the latest docs
