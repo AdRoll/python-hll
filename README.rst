@@ -25,7 +25,8 @@ while in Python ``test_hll_serialization`` takes 1.5 hours to run (about 400x sl
 
 * Runs on: Python 2.7 and 3
 * Free software: MIT license
-* Documentation: https://python-hll.readthedocs.io.
+* Documentation: https://python-hll.readthedocs.io
+* GitHub: https://github.com/AdRoll/python-hll
 
 Overview
 ---------------
