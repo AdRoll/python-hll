@@ -10,10 +10,6 @@ python-hll
         :target: https://python-hll.readthedocs.io/en/latest/?badge=latest
         :alt: Documentation Status
 
-.. image:: https://pyup.io/repos/github/AdRoll/python-hll/shield.svg
-     :target: https://pyup.io/repos/github/AdRoll/python-hll/
-     :alt: Updates
-
 A Python implementation of `HyperLogLog <http://algo.inria.fr/flajolet/Publications/FlFuGaMe07.pdf>`_
 whose goal is to be `storage compatible <https://github.com/aggregateknowledge/hll-storage-spec>`_
 with `java-hll <https://github.com/aggregateknowledge/java-hll>`_, `js-hll <https://github.com/aggregateknowledge/js-hll>`_
