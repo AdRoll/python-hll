@@ -76,4 +76,4 @@ Writing an HLL to its hex representation of
 
 Development
 ---------------
-See the `Contributing` document for how to get started building and testing the code.
+See the `Contributing` document for how to get started building, testing, and deploying the code.
