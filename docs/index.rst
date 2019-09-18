@@ -7,7 +7,7 @@ Welcome to python-hll's documentation!
 
    readme
    installation
-   modules
+   API <https://python-hll.readthedocs.io/en/latest/docs/python_hll.html>
    contributing
    authors
    history
