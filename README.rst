@@ -75,7 +75,7 @@ Writing an HLL to its hex representation of
     bytes = hll.to_bytes()
     output = "\\x" + NumberUtil.to_hex(bytes, 0, len(bytes))
 
-Also see the `API documentation <https://python-hll.readthedocs.io/en/latest/py-modindex.html>`_.
+Also see the `API documentation <https://python-hll.readthedocs.io/en/latest/docs/python_hll.html>`_.
 
 Development
 ---------------
