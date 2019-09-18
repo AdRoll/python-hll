@@ -57,16 +57,16 @@ If you are proposing a feature:
 Get Started!
 ------------
 
-Ready to contribute? Here's how to set up `python_hll` for local development.
+Ready to contribute? Here's how to set up `python-hll` for local development.
 
-1. Fork the `python_hll` repo on GitHub.
+1. Fork the `python-hll` repo on GitHub.
 2. Clone your fork locally::
 
-    $ git clone git@github.com:your_name_here/python_hll.git
+    $ git clone git@github.com:your_name_here/python-hll.git
 
 3. Install your local copy into a virtualenv. Assuming you have virtualenvwrapper installed, this is how you set up your fork for local development::
 
-    $ cd python_hll/
+    $ cd python-hll/
     $ mkvirtualenv python_hll
     $ python setup.py develop
     $ pip install -r requirements_dev.txt
@@ -111,14 +111,6 @@ Before you submit a pull request, check that it meets these guidelines:
    feature to the list in README.rst.
 3. The pull request should work for Python 2.7, 3.4, 3.5 and 3.6, and for PyPy.
    Make sure that the tests pass for all supported Python versions.
-
-Tips
-----
-
-To run a subset of tests::
-
-$ py.test tests.test_python_hll
-
 
 Deploying
 ---------
