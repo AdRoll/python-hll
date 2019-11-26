@@ -622,7 +622,7 @@ class SerializationUtil:
         :returns: the packed version byte
         :rtype: byte
         """
-        return BitUtil.to_signed_byte(BitUtil.left_shift_int(cls.NIBBLE_MASK & schema_version, cls.NIBBLE_BITS) | (cls.NIBBLE_MASK & type_ordinal))
+        return BitUtil.left_shift_int(cls.NIBBLE_MASK & schema_version, cls.NIBBLE_BITS) | (cls.NIBBLE_MASK & type_ordinal)
 
     @classmethod
     def pack_cutoff_byte(cls, explicit_cutoff, sparse_enabled):
