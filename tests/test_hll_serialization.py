@@ -9,6 +9,7 @@ from copy import deepcopy
 from python_hll.hlltype import HLLType
 from python_hll.hll import HLL
 from python_hll.serialization import SerializationUtil
+from python_hll.util import BitUtil
 
 # A fixed random seed so that this test is reproducible.
 RANDOM_SEED = 1
@@ -19,6 +20,44 @@ def test_parameters_byte():
     assert 5 == SerializationUtil.register_count_log2(0x85)
 
     assert 0x85 == SerializationUtil.pack_parameters_byte(5, 5)
+
+
+def test_parameters_byte_roundtrip():
+    log2m = 5
+    regwidth = 6
+    expthresh = 0
+    sparseon = False
+    input_hll = HLL(log2m, regwidth, expthresh, sparseon)
+
+    output_hll = HLL.from_bytes(input_hll.to_bytes())
+    assert log2m == output_hll._log2m
+    assert regwidth == output_hll._regwidth
+
+
+def test_cutoff_byte_auto():
+    log2m = 5
+    regwidth = 3
+    expthresh = -1
+    sparseon = True
+    input_hll = HLL(log2m, regwidth, expthresh, sparseon)
+
+    output_hll = HLL.from_bytes(input_hll.to_bytes())
+    assert not output_hll._sparse_off
+    assert output_hll._explicit_auto
+    assert not output_hll._explicit_off
+
+
+def test_cutoff_byte_max():
+    log2m = 5
+    regwidth = 3
+    expthresh = 18
+    sparseon = True
+    input_hll = HLL(log2m, regwidth, expthresh, sparseon)
+
+    output_hll = HLL.from_bytes(input_hll.to_bytes())
+    assert not output_hll._sparse_off
+    assert not output_hll._explicit_auto
+    assert not output_hll._explicit_off
 
 
 def test_serialization_smoke(fastonly):
