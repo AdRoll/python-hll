@@ -8,9 +8,17 @@ import sys
 from copy import deepcopy
 from python_hll.hlltype import HLLType
 from python_hll.hll import HLL
+from python_hll.serialization import SerializationUtil
 
 # A fixed random seed so that this test is reproducible.
 RANDOM_SEED = 1
+
+
+def test_parameters_byte():
+    assert 5 == SerializationUtil.register_width(0x85)
+    assert 5 == SerializationUtil.register_count_log2(0x85)
+
+    assert 0x85 == SerializationUtil.pack_parameters_byte(5, 5)
 
 
 def test_serialization_smoke(fastonly):
