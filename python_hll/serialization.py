@@ -644,7 +644,7 @@ class SerializationUtil:
         :rtype: byte
         """
         sparse_bit = BitUtil.left_shift_int(1, cls.EXPLICIT_CUTOFF_BITS) if sparse_enabled else 0
-        return BitUtil.to_signed_byte(sparse_bit | (cls.EXPLICIT_CUTOFF_MASK & explicit_cutoff))
+        return sparse_bit | (cls.EXPLICIT_CUTOFF_MASK & explicit_cutoff)
 
     @classmethod
     def pack_parameters_byte(cls, register_width, register_count_log2):
@@ -665,7 +665,7 @@ class SerializationUtil:
         """
         width_bits = (register_width - 1) & cls.REGISTER_WIDTH_MASK
         count_bits = register_count_log2 & cls.LOG2_REGISTER_COUNT_MASK
-        return BitUtil.to_signed_byte(BitUtil.to_signed_byte(BitUtil.left_shift_int(width_bits, cls.LOG2_REGISTER_COUNT_BITS) | count_bits))
+        return BitUtil.left_shift_int(width_bits, cls.LOG2_REGISTER_COUNT_BITS) | count_bits
 
     @classmethod
     def sparse_enabled(cls, cutoff_byte):
