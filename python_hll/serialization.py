@@ -255,7 +255,7 @@ class BigEndianAscendingWordSerializer:
             aligned_bits = BitUtil.left_shift_long(bits_that_the_byte_can_accept, bits_in_byte_remaining_after_write)
 
             # Update the byte with the alignedBits.
-            self._bytes[self._byte_index] |= BitUtil.to_signed_byte(aligned_bits)
+            self._bytes[self._byte_index] |= aligned_bits
 
             # Update state with bit count written.
             bits_left_in_word -= number_of_bits_to_write
