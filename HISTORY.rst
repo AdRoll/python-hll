@@ -16,3 +16,8 @@ History
 ------------------
 
 * Add missing install_requires: numpy
+
+0.1.2 (2019-12-12)
+------------------
+
+* Fix alpha_m_squared for m=32: https://github.com/AdRoll/python-hll/pull/2
