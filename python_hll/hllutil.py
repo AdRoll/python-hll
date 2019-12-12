@@ -73,7 +73,7 @@ class HLLUtil:
             return 0.673 * m * m
 
         elif m == 32:
-            return 0.673 * m * m
+            return 0.697 * m * m
 
         elif m == 64:
             return 0.709 * m * m
