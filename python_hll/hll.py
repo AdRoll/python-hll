@@ -569,7 +569,7 @@ class HLL:
 
             else:  # source is HLLType.FULL
                 self._type = HLLType.FULL
-                self._sparse_probabilistic_storage = deepcopy(other._sparse_probabilistic_storage)
+                self._probabilistic_storage = deepcopy(other._probabilistic_storage)
 
             for value in self._explicit_storage:
                 self.add_raw(value)
