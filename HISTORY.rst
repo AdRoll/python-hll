@@ -21,3 +21,9 @@ History
 ------------------
 
 * Fix alpha_m_squared for m=32: https://github.com/AdRoll/python-hll/pull/2
+
+0.1.3 (2021-01-22)
+------------------
+
+* Fix AttributeError: 'HLL' object has no attribute '_sparse_probabilistic_storage':
+  https://github.com/AdRoll/python-hll/pull/4
