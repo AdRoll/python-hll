@@ -4,4 +4,4 @@
 
 __author__ = """Jon Aquino"""
 __email__ = 'jonathan.aquino@adroll.com'
-__version__ = '0.1.2'
+__version__ = '0.1.3'
